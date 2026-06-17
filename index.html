@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AND Mobile Manuscript</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/page-flip/dist/css/page-flip.css">
+
+<style>
+
+body{
+    margin:0;
+    background:#0f0a06;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+#book{
+    width:90vw;
+    height:90vh;
+}
+
+.page{
+    background:transparent;
+}
+
+.page img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="book">
+
+    <div class="page">
+        <img src="mobilesound.png">
+    </div>
+
+    <div class="page">
+        <img src="mobileyoga.png">
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+
+<script>
+
+const pageFlip = new St.PageFlip(
+    document.getElementById("book"),
+    {
+        width:768,
+        height:1365,
+
+        size:"stretch",
+
+        minWidth:300,
+        maxWidth:900,
+
+        minHeight:500,
+        maxHeight:1800,
+
+        showCover:false,
+
+        mobileScrollSupport:false,
+
+        useMouseEvents:true,
+
+        swipeDistance:30
+    }
+);
+
+pageFlip.loadFromHTML(
+    document.querySelectorAll(".page")
+);
+
+</script>
+
+</body>
+</html>
